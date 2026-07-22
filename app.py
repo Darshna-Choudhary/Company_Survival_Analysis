@@ -173,29 +173,35 @@ st.markdown(
     '<p class="sub-title">Exploring company survival patterns across industries, capital structure and registration trends.</p>',
     unsafe_allow_html=True
 )
-
+page = st.radio(
+    "Navigation",
+    ["Executive Summary",
+     "Capital Analysis",
+     "Industry Trends",
+     "Survival Analysis"]
+)
 st.divider()
 
 # -------------------------------------------------
 # PAGE ROUTING
 # -------------------------------------------------
 
-if selected == "Executive Summary":
+if page == "Executive Summary":
 
     from pages.executive_summary import show_page
     show_page()
 
-elif selected == "Survival Analysis":
+elif page == "Survival Analysis":
 
     from pages.survival_analysis import show_page
     show_page()
 
-elif selected == "Capital Analysis":
+elif page == "Capital Analysis":
 
     from pages.capital_analysis import show_page
     show_page()
 
-elif selected == "Industry Trends":
+elif page == "Industry Trends":
 
     from pages.industry_trends import show_page
     show_page()
